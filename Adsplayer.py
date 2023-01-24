@@ -118,7 +118,7 @@ while True:
 
 
         f = open('/home/pi/Downloads/Schduletest/AdsFile.txt', 'r' )
-        # e.g., f = open("data2.txt")
+  
         mode = f.read()
         if mode != '':
             current_mode = mode
@@ -150,9 +150,8 @@ while True:
                 
                     player.stdin.flush()
                     sleep(sleepx)
-                #{'BS-11111.jpg': '15', 'BS-01-GossipGirl.mp4': '10', 'BS-11.mp4': '10'}
                 elif videopath.split('.')[-1] == 'jpg':
-                    play = subprocess.Popen(args=["feh",videopath, "-Y", "-B black", "-F", "-Z", "-x"])
+                    play = subprocess.Popen(args=["fbi",'-a','-T','Z',videopath])
                     sleep(sleepx)
                     play.terminate()
                     
@@ -162,7 +161,7 @@ while True:
         media_index = (media_index + 1) % media_size
     else :
         print("essssssssssssssss")
-        play = subprocess.Popen(args=["feh","black.png", "-Y", "-B black", "-F", "-Z", "-x"])
+        play = subprocess.Popen(args=["fbi",'-a','-T','Z',"home/pi/Downloads/Schduletest/black.png"])
         sleep(5)
         play.terminate()
     print('While completed')
